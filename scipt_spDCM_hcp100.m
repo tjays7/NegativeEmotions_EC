@@ -13,9 +13,9 @@ clear;
 close all;
 
 fs              = '/';       % platform-specific file separator
-dir_base        = '/home/tajwars/xw69_scratch/Tajwar/HCP/hcp100/';
+dir_base        = 'Path_to_fMRIdatafiles;
 dir_functional  = 'func'; % base directory of functional scans (Nifti)
-dir_struct      = 'anat';
+
 
 GLM          = 0;
 specify_DCM  = 0;
@@ -32,7 +32,7 @@ name_subj = name_subj(dirFlags); % Extract only directories
 %% 
 TIME = tic;
 
-for s0 = 1 : length(name_subj) % s0 = 78 error no volume in WM, 
+for s0 = 1 : length(name_subj) 
 
     disp(['Analysing Subject : ', name_subj(s0).name]);
    
@@ -264,5 +264,3 @@ end
 
 fprintf('This took %s', duration([0, 0, toc(TIME)]));
 
-% GCM = cellstr(spm_select('FPListRec',fullfile('D:\Tajwar\TMS\TMS_ICA_AROMA','Active','Pre'),'^DCM.*\.mat$');
-% spm_dcm_fmri_check(GCM);
